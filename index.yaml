@@ -14,6 +14,16 @@ entries:
   docker-readsb-protobuf:
   - apiVersion: v2
     appVersion: v4.0.3
+    created: "2023-05-15T10:19:37.618331817Z"
+    description: A Helm chart for readsb
+    digest: f7d81266c7ea65f0d38e5566878d099d3b3434551a570a54dd7c20a1d13e66dd
+    name: docker-readsb-protobuf
+    type: application
+    urls:
+    - https://github.com/theNailz/charts/releases/download/docker-readsb-protobuf-0.2.1/docker-readsb-protobuf-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: v4.0.3
     created: "2023-05-15T10:13:59.393503468Z"
     description: A Helm chart for readsb
     digest: 5c54cd468b4794f0a24e465aeab5aacb350ef8b3acff8586b5bfec303bb1063b
@@ -32,4 +42,4 @@ entries:
     urls:
     - https://github.com/theNailz/charts/releases/download/docker-readsb-protobuf-0.1.0/docker-readsb-protobuf-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-15T10:13:59.393511869Z"
+generated: "2023-05-15T10:19:37.618341117Z"
