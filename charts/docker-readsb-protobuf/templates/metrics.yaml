@@ -1,0 +1,17 @@
+{{- if .Values.prometheus.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "docker-readsb-protobuf.fullname" . }}-metrics
+  labels:
+    {{- include "docker-readsb-protobuf.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.webservice.type }}
+  ports:
+    - port: {{ .Values.prometheus.port }}
+      targetPort: {{ .Values.prometheus.port }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "docker-readsb-protobuf.selectorLabels" . | nindent 4 }}
+{{- end -}}

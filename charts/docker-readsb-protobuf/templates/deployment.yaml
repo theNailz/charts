@@ -66,6 +66,12 @@ spec:
               value: "true"
             - name: READSB_NET_ENABLE
               value: "true"
+            - name: ENABLE_PROMETHEUS
+              value: {{ .Values.prometheus.enabled | quote }}
+            - name: PROMETHEUSPORT
+              value: {{ .Values.prometheus.port | quote }}
+            - name: PROMETHEUSPATH
+              value: {{ .Values.prometheus.path | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:

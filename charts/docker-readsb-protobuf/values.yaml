@@ -87,3 +87,8 @@ readsb:
   timezone: "Europe/Amsterdam"
   latitude: "11.1111"
   longitude: "22.2222"
+
+prometheus:
+  enabled: false
+  port: "9273"
+  path: "/metrics"
