@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  docker-adsbexchange:
+  - apiVersion: v2
+    appVersion: 20230512.1118_nohealthcheck
+    created: "2023-05-15T09:38:07.553946211Z"
+    description: A Helm chart for docker-adsbexchange
+    digest: 3e47180cf0099db53e93b03d4503c705ecb150f735229fb28ba421d41fd55a79
+    name: docker-adsbexchange
+    type: application
+    urls:
+    - https://github.com/theNailz/charts/releases/download/docker-adsbexchange-0.1.0/docker-adsbexchange-0.1.0.tgz
+    version: 0.1.0
   docker-readsb-protobuf:
   - apiVersion: v2
     appVersion: v4.0.3
@@ -11,4 +22,4 @@ entries:
     urls:
     - https://github.com/theNailz/charts/releases/download/docker-readsb-protobuf-0.1.0/docker-readsb-protobuf-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-15T07:15:25.061036065Z"
+generated: "2023-05-15T09:38:07.553952111Z"
