@@ -1,0 +1,73 @@
+# Default values for docker-adsbexchange.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/sdr-enthusiasts/docker-adsbexchange
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 30105
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# See https://github.com/sdr-enthusiasts/docker-adsbexchange for more info
+config:
+  sitename: "My-Cool-ADS-B-Exchange-Instance"
+  beasthost: "readsb.host"
+  beastport: 30005
+  uuid: "GENERATE-RANDOM-UUID"
+  latitude: 0
+  longitude: 0
+  # The altitude of the antenna above sea level.
+  # If positive (above sea level), must include either 'm' or 'ft' suffix to indicate metres or feet.
+  # If negative (below sea level), must have no suffix, and the value is interpreted in metres.
+  altitude: 0
+  timezone: "Europe/Amsterdam"

@@ -1,0 +1,3 @@
+Chart installed!
+
+View your statistics at: https://www.adsbexchange.com/api/feeders/?feed={{- .Values.config.uuid -}}
