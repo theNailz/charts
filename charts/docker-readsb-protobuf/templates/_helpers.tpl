@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "readsb.name" -}}
+{{- define "docker-readsb-protobuf.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "readsb.fullname" -}}
+{{- define "docker-readsb-protobuf.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -23,23 +23,23 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 {{- end }}
 
-{{- define "readsb.fullname.web" -}}
-{{- printf "%s-%s" (include "readsb.fullname" .) "web" }}
+{{- define "docker-readsb-protobuf.fullname.web" -}}
+{{- printf "%s-%s" (include "docker-readsb-protobuf.fullname" .) "web" }}
 {{- end -}}
 
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "readsb.chart" -}}
+{{- define "docker-readsb-protobuf.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "readsb.labels" -}}
-helm.sh/chart: {{ include "readsb.chart" . }}
-{{ include "readsb.selectorLabels" . }}
+{{- define "docker-readsb-protobuf.labels" -}}
+helm.sh/chart: {{ include "docker-readsb-protobuf.chart" . }}
+{{ include "docker-readsb-protobuf.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -49,17 +49,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "readsb.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "readsb.name" . }}
+{{- define "docker-readsb-protobuf.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "docker-readsb-protobuf.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "readsb.serviceAccountName" -}}
+{{- define "docker-readsb-protobuf.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "readsb.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "docker-readsb-protobuf.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

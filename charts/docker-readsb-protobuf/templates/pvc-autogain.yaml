@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "readsb.fullname" . }}-autogain
+  name: {{ include "docker-readsb-protobuf.fullname" . }}-autogain
 spec:
   accessModes:
     - ReadWriteOnce
