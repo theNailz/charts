@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "readsb.fullname" . }}-beast
+  labels:
+    {{- include "readsb.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.beastservice.type }}
+  ports:
+    - port: {{ .Values.beastservice.port }}
+      targetPort: 30005
+      protocol: TCP
+      name: beast
+  selector:
+    {{- include "readsb.selectorLabels" . | nindent 4 }}

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "readsb.fullname" . }}-web
+  labels:
+    {{- include "readsb.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.webservice.type }}
+  ports:
+    - port: {{ .Values.webservice.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "readsb.selectorLabels" . | nindent 4 }}
