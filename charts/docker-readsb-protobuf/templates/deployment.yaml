@@ -67,7 +67,7 @@ spec:
             - name: READSB_NET_ENABLE
               value: "true"
             - name: ENABLE_PROMETHEUS
-              value: {{ .Values.prometheus.enabled | quote }}
+              value: "{{ if .Values.prometheus.enabled }}true{{ end }}"
             - name: PROMETHEUSPORT
               value: {{ .Values.prometheus.port | quote }}
             - name: PROMETHEUSPATH
